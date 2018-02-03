@@ -1,0 +1,75 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Sealing_around
+
+{
+    public partial class Form1 : Form
+    {
+        bool goup;
+        bool godown;
+        bool goleft;
+        bool goright;
+
+        int speed = 5;
+
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+
+        private void keyisdown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Left)
+            {
+                goleft = true;
+                seal.Image = Properties.Resources.Left;
+            }
+
+            if (e.KeyCode == Keys.Right)
+            {
+                goright = true;
+                seal.Image = Properties.Resources.Right;
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                goup = true;
+                seal.Image = Properties.Resources.Up;
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                godown = true;
+                seal.Image = Properties.Resources.Down;
+            }
+        }
+
+        private void keyisup(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Left)
+            {
+                goleft = false;
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                goright = false;
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                goup = false;
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                godown = false;
+            }
+        }
+    }
+}
